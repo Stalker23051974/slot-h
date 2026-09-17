@@ -1,0 +1,118 @@
+/* ============================================================
+   CONTACTS PAGE
+   ============================================================ */
+.contacts {
+    padding: 3rem 0 5rem;
+}
+
+.contacts-content {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all var(--transition);
+    text-align: center;
+}
+
+.contact-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition);
+}
+
+.contact-card:hover .contact-icon {
+    color: var(--color-accent);
+}
+
+/* Цветные иконки при ховере */
+.contact-card:hover .contact-icon.whatsapp {
+    color: #25D366;
+}
+
+.contact-card:hover .contact-icon.telegram {
+    color: #0088cc;
+}
+
+.contact-card:hover .contact-icon.max {
+    color: #ff6b00;
+}
+
+.contact-card:hover .contact-icon.vk {
+    color: #4a76a8;
+}
+
+.contact-card:hover .contact-icon.dzen {
+    color: #ffd700;
+}
+
+.contact-card:hover .contact-icon.setka {
+    color: #f5a623;
+}
+
+.contact-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.contact-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+    .contacts-content {
+        padding: 1.5rem;
+    }
+
+    .contacts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 1.5rem auto 0;
+    }
+}

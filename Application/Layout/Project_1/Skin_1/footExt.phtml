@@ -1,0 +1,78 @@
+<?php
+use \Application\Helpers\Line as Str;
+use \Modules\Base\Models\DbTables\Constant;
+use \Modules\Free\Bootstrap as fBoot;
+use \Modules\Free\Crud as fCrud;
+use \Application\Assistance\Controller\Controller as Cr;
+use \Modules\Base\Models\DbTables as db;
+use \Modules\Geo\Models\DbTables as gDb;
+use Config\CC as C;
+
+/** @var array $_globalMenus */
+
+$godCheck = false;
+if (isset($_COOKIE[Cr::GOD_MODE . CURRENT_PROJECT])) {
+    if ($parent = db\PersonPrivate::getByUid($_COOKIE[Cr::GOD_MODE . CURRENT_PROJECT])) {
+        $godCheck = true;
+    }
+}
+?>
+<script>
+    var locale = {
+            days: <?= dfJsonEncode(\Application\Helpers\Date::shortWeekDays2())?>,
+            monthes: <?= dfJsonEncode(\Application\Helpers\Date::shortMonthTitleReal())?>
+        },
+        preloader = '<div class="loading" id="loading" flexable>' +
+            '<img src="<?= $this->addSvg('preloader/prelaoder_01.svg') ?>" class="loading__img" alt="loading"/>' +
+            '<div class="loading__text"><?= C::locale('Please wait...') ?></div>' +
+            '</div>'
+    ;
+</script>
+</main>
+
+<!-- FOOTER -->
+<?php if ($this->_menu_ == true) { ?>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="footer-logo">⚡ SLOT-H</span>
+                    <span class="footer-tagline">One code. Many projects. Zero boundaries.</span>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Проект</h4>
+                        <ul>
+                            <li><a href="<?= $this->url(fBoot::$_module, fCrud::DOCS_CONTROLLER, 'index') ?>"><?= C::locale('Документация') ?></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Сообщество</h4>
+                        <ul>
+                            <li><a href="https://github.com/yourname/slot-h" target="_blank">GitHub</a></li>
+                            <li><a href="<?= $this->url(fBoot::$_module, fCrud::DOCS_CONTROLLER, 'index', ['article' => '32']) ?>"><?= C::locale('Поддержка') ?></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ресурсы</h4>
+                        <ul>
+                            <li><a href="<?= $this->url(fBoot::$_module, fCrud::DOCS_CONTROLLER, 'index', ['article' => '33']) ?>"><?= C::locale('Лицензия') ?></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SLOT-H. <?= C::locale('Разработано с прагматизмом в течение 15+ лет.') ?></p>
+                    <div class="footer-badges">
+                        <span class="badge">MIT</span>
+                        <span class="badge">PHP 5.x-8.x</span>
+                        <span class="badge">Production Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<?php } ?>
+</body>
+</html>

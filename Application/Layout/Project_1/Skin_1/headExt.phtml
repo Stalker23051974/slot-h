@@ -1,0 +1,108 @@
+<?php
+use \Application\Helpers\Line as Str;
+use \Modules\Free\Bootstrap as fBoot;
+use \Modules\Free\Crud as fCrud;
+use \Application\Assistance\Controller\Controller as Cr;
+use \Config\CC as C;
+
+\Application\Assistance\Database::setModelResponse(true);
+$urls = [
+    'authUrl' => Str::getUrl(fBoot::$_module, fCrud::PERSON_CONTROLLER, 'signin'),
+    'remindUrl' => Str::getUrl(fBoot::$_module, fCrud::PERSON_CONTROLLER, 'remind')
+];
+$language = \Modules\Geo\Models\DbTables\Language::getRow(DEFAULT_LANGUAGE);
+$allowAction = 'false';
+
+/** @var \Application\Assistance\View\View $this */
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <?php $this->_meta->getMeta() ?>
+    <script src="/Application/Public/js/jquery.min.js<?= $this->getRand() ?>"></script>
+</head>
+<body>
+<!-- HEADER -->
+<?php if ($this->_menu_ === true) { ?>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="/">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">SLOT-<span class="logo-highlight">H</span></span>
+                        <span class="logo-tagline">Single Logical Operating Tool for Hosting</span>
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/"><?= C::locale('Главная') ?></a></li>
+                        <li><a href="<?= $this->url(fBoot::$_module, fCrud::ABOUT_CONTROLLER, 'index') ?>"><?= C::locale('О проекте') ?></a>
+                        </li>
+                        <li>
+                            <a href="<?= $this->url(fBoot::$_module, fCrud::DOCS_CONTROLLER, 'index') ?>"><?= C::locale('Документация') ?></a>
+                        </li>
+                        <li>
+                            <a href="<?= $this->url(fBoot::$_module, fCrud::CONTACT_CONTROLLER, 'index') ?>"><?= C::locale('Контакты') ?></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="https://github.com/yourname/slot-h" class="btn btn-github" target="_blank">
+                        <span class="btn-icon">⭐</span> GitHub
+                    </a>
+                </div>
+                <div class="header-language">
+                    <?php
+                    $langs = [];
+                    foreach (\Modules\Geo\Models\DbTables\Language::getActive() as $v) {
+                        $langs[] = '<button class="lang-btn' . (DEFAULT_LANGUAGE == $v->_id() ? ' active' : '') . '" data-lang="' . $v->_id() . '" title="' . $v->_name() . '" onclick="go(clearLocation().replace(/\/lng\/[a-z]{2,}/i,\'\')+\'?lng=' . $v->getLanguageIso1() . '\')"><span class="lang-flag"><img src="/Images/flags/'.$v->getLanguageFlag().'.svg"></span><span class="lang-label">' . strtoupper($v->getLanguageIso1()) . '</span></button>';
+                    }
+                    echo implode('<span class="lang-divider">|</span>', $langs);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </header>
+<?php } ?>
+<main>
+    <script>
+        var alfaFooter = '<?= $_SESSION[\Application\Assistance\Request::_VERIFY_] ?>',
+            voiceIndex = <?= (isset($_COOKIE[Cr::FREE_VOICE_COOKIE]) ? $_COOKIE[Cr::FREE_VOICE_COOKIE] : DEFAULT_VOICE) ?>,
+            voiceType = '<?= (isset($_COOKIE[Cr::FREE_VOICE_TYPE_COOKIE]) ? $_COOKIE[Cr::FREE_VOICE_TYPE_COOKIE] : 'female') ?>',
+            talkError = <?= dfJsonEncode($this->_errors) ?>,
+            projectCookies = {
+                my: 'my_<?= CURRENT_PROJECT ?>',
+                current: 'current_<?= CURRENT_PROJECT ?>',
+                auto: 'automode_<?= CURRENT_PROJECT ?>',
+                completed: 'completed_<?= CURRENT_PROJECT ?>',
+                welcome: 'welcome_<?= CURRENT_PROJECT ?>',
+                prev: 'prevmy_<?= CURRENT_PROJECT ?>',
+                acceptCookie: 'acceptCookie_<?= CURRENT_PROJECT ?>'
+            }
+        ;
+    </script>
+    <?php
+    /** @var \Application\Assistance\View\View $this */
+    $this->addStyle([
+
+        // Connecting the CSS script tied to your project (located in the Project_<...> folder)
+        'main' => false
+
+    ])->addScript([
+
+        // Custom JS library connection.
+        // Here you can connect your own JS framework or simply comment out the line below to work with vanilla JS/jQuery.
+        '../main' => false,
+
+        // Connecting the JS script tied to your project (located in the Project_<...> folder)
+        'main' => false
+
+    ]);
+    ?>
+    <script>
+        var headMainPage = <?= json_encode($urls) ?>, alfaHeader = '<?= base64_encode(PASSWORD_CHECK_PHRASE) ?>';
+    </script>
+

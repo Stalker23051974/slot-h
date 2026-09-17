@@ -1,0 +1,200 @@
+/* ============================================================
+   COMING SOON / LOCKED PAGE
+   ============================================================ */
+
+.coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+    background-image:
+            radial-gradient(ellipse at 20% 50%, rgba(96, 165, 250, 0.06) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 50%, rgba(52, 211, 153, 0.04) 0%, transparent 60%);
+}
+
+.coming-soon__container {
+    max-width: 720px;
+    width: 100%;
+    text-align: center;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(4px);
+}
+
+/* Логотип */
+.coming-soon__logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.coming-soon__logo-highlight {
+    color: var(--color-accent);
+}
+
+.coming-soon__tagline {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* Статус */
+.coming-soon__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--color-accent-glow);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 50px;
+    padding: 0.4rem 1.2rem 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.coming-soon__status-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--color-success);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Заголовок */
+.coming-soon__title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.coming-soon__subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* Таймер */
+.coming-soon__timer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.coming-soon__timer-item {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.coming-soon__timer-item:hover {
+    border-color: var(--color-accent);
+}
+
+.coming-soon__timer-number {
+    font-family: var(--font-mono);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1.2;
+    display: block;
+}
+
+.coming-soon__timer-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-top: 0.2rem;
+    display: block;
+}
+
+/* Прогресс-бар */
+.coming-soon__progress-wrap {
+    background: var(--color-bg);
+    border-radius: 50px;
+    height: 4px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.coming-soon__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-success));
+    border-radius: 50px;
+    transition: width 0.5s ease;
+}
+
+/* Дата запуска */
+.coming-soon__launch-date {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.coming-soon__launch-date strong {
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+    .coming-soon__container {
+        padding: 2rem 1.25rem;
+    }
+
+    .coming-soon__logo {
+        font-size: 1.8rem;
+    }
+
+    .coming-soon__title {
+        font-size: 1.3rem;
+    }
+
+    .coming-soon__timer {
+        gap: 0.6rem;
+    }
+
+    .coming-soon__timer-number {
+        font-size: 2rem;
+    }
+
+    .coming-soon__timer-label {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .coming-soon__timer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .coming-soon__timer-item {
+        padding: 0.75rem 0.25rem;
+    }
+
+    .coming-soon__timer-number {
+        font-size: 1.8rem;
+    }
+}

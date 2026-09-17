@@ -1,0 +1,85 @@
+<?php
+use \Config\CC as C;
+
+/** @var \Application\Assistance\View\View $this */
+
+/** @var string $content */
+/** @var int $id */
+/** @var int $last */
+
+$this->addEnvironment();
+
+$url = $this->url(\Modules\Free\Bootstrap::$_module, \Modules\Free\Crud::DOCS_CONTROLLER);
+?>
+<section class="docs">
+    <div class="container">
+        <div class="docs-layout">
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-inner">
+                    <div class="docs-search">
+                        <input type="text" id="docsSearch" placeholder="Поиск по документации..."/>
+                    </div>
+                    <nav class="docs-nav" id="docsNav">
+                        <ul>
+                            <?php foreach ([
+                                               '01' => C::locale('Введение + философия'),
+                                               '02' => C::locale('Требования к серверу'),
+                                               '03' => C::locale('Быстрый старт'),
+                                               '04' => C::locale('Философия экосистемы (Соглашение важнее правил)'),
+                                               '05' => C::locale('Принципы работы (ядро vs модули)'),
+                                               '06' => C::locale('Архитектура'),
+                                               '07' => C::locale('Автолоадер (граф зависимостей)'),
+                                               '08' => C::locale('Соглашение о хранилище данных'),
+                                               '09' => C::locale('Параметризация'),
+                                               '10' => C::locale('Мультипроектность'),
+                                               '11' => C::locale('Модуль Base'),
+                                               '12' => C::locale('Модуль Free'),
+                                               '13' => C::locale('Модуль Geo (демо/полная)'),
+                                               '14' => C::locale('Создание модуля (описание)'),
+                                               '15' => C::locale('Диаграмма связей'),
+                                               '16' => C::locale('ORM - принципы'),
+                                               '17' => C::locale('Методы работы'),
+                                               '18' => C::locale('Сложные запросы'),
+                                               '19' => C::locale('Модели'),
+                                               '20' => C::locale('JSON-данные'),
+                                               '21' => C::locale('Типы контроллеров'),
+                                               '22' => C::locale('Структура фронтенд части (phtml файлы, css и js)'),
+                                               '23' => C::locale('Выбор js-оболочки'),
+                                               '24' => C::locale('Динамическая подпись'),
+                                               '25' => C::locale('Защита доступа'),
+                                               '26' => C::locale('Принцип локализации'),
+                                               '27' => C::locale('Запуск сервера (Демо)'),
+                                               '28' => C::locale('Задачи сервера (dump - демо)'),
+                                               '29' => C::locale('Хелперы (Curl, Date, File, Geo, Person)'),
+                                               '30' => C::locale('Демо vs Полная версия'),
+                                               '31' => C::locale('Часто задаваемые вопросы'),
+                                               '32' => C::locale('Вклад в проект - только баги и предложения'),
+                                               '33' => C::locale('Лицензия')
+                                           ] as $k => $v) {
+                                echo '<li><a href="' . $url . '/article/' . $k . '">' . $v . '</a></li>';
+                            } ?>
+                            <li id="nothing"><?= C::locale('Ничего не найдено') ?></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <main class="docs-content">
+                <div class="docs-content-inner" id="docsContent">
+                    <div class="docs-welcome">
+                        <?= $content ?>
+                    </div>
+                </div>
+                <div class="docs-navigation">
+                    <a class="btn btn-<?= ($id > 1 ? 'outline' : 'disabled') ?>"
+                       id="docsPrev">← <?= C::locale('Предыдущий') ?></a>
+                    <span class="docs-counter" id="docsCounter">1 / 1</span>
+                    <a class="btn btn-<?= ($id < $last ? 'outline' : 'disabled') ?>"
+                       id="docsNext"><?= C::locale('Следующий') ?> →</a>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+<script>
+    var docUrl = '<?= $this->url(\Modules\Free\Bootstrap::$_module, \Modules\Free\Crud::PERSON_CONTROLLER, 'doc') ?>';
+</script>

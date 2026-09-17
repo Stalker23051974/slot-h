@@ -1,0 +1,7 @@
+<?php
+use \Modules\Base\Models\DbTables\Text as T;
+
+/** @var \Application\Assistance\View\View $this */
+$this->addStyle(['policy_terms' => true]);
+echo '<section>'.T::getTextByTag(T::TEXT_TAG_PRIVACY_POLICY).'</section>';
+?>

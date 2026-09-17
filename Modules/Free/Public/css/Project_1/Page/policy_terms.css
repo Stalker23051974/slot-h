@@ -1,0 +1,22 @@
+section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+hr {
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+
+h2:not(:nth-child(1)) {
+    margin-bottom: 24px;
+}
+
+ul {
+    padding-left: 48px;
+}

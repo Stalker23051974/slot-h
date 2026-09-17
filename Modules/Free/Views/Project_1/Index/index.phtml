@@ -1,0 +1,418 @@
+<?php
+use \Config\CC as C;
+
+/** @var \Application\Assistance\View\View $this */
+$this->addEnvironment();
+?>
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        v16.0.1 - Production Ready
+                    </div>
+                    <h1>
+                        <span class="highlight"><?= C::locale('Один код.') ?></span><br>
+                        <span class="highlight-alt"><?= C::locale('Множество проектов.') ?></span><br>
+                        <span class="highlight-accent"><?= C::locale('Ноль границ.') ?></span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        ⚡ <?= C::locale('SLOT-H - экосистема для прагматичных разработчиков') ?>
+                    </p>
+                    <p class="hero-description">
+                        <?= C::locale('Пишите код один раз. SLOT-H разворачивает его на десятках сайтов с единой базой данных, единой логикой и единой точкой входа. Без микросервисов. Без контейнеризации. Без головной боли.') ?>
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://github.com/yourname/slot-h" class="btn btn-github btn-lg" target="_blank">
+                            <span class="btn-icon">⭐</span> <?= C::locale('Смотреть на GitHub') ?>
+                        </a>
+                        <a href="/docs" class="btn btn-outline btn-lg"><?= C::locale('Документация') ?></a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label"><?= C::locale('лет в продакшене') ?></span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label"><?= C::locale('лет опыта автора') ?></span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label"><?= C::locale('проектов') ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                            <span class="terminal-title">slot-h@server:~$</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> git clone slot-h
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> cd slot-h
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> mysql -u <user> -p < Application/Tools/slot_h_all.sql
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> php Application/Tools/createAutoloader.php
+                            </div>
+                            <div class="terminal-line cursor">
+                                <span class="prompt">$</span> <span class="blink">█</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-snippet">
+                        <span class="code-keyword">namespace</span> <span class="code-class">Modules\Base\Models</span>;
+                        <span class="code-comment">/**</span>
+                        <span class="code-comment"> * Project model class.</span>
+                        <span class="code-comment"> *</span>
+                        <span class="code-comment"> * Represents a project/tenant record. Each project is a separate</span>
+                        <span class="code-comment"> * website or application instance sharing the same codebase.</span>
+                        <span class="code-comment"> *</span>
+                        <span class="code-comment"> * @package   Modules\Base\Models</span>
+                        <span class="code-comment"> * @author    Alexandr Nikitin</span>
+                        <span class="code-comment"> * @version   16.0</span>
+                        <span class="code-comment"> * @copyright (c) 2026</span>
+                        <span class="code-comment"> */</span>
+                        <span class="code-keyword">class</span> <span class="code-class">Project</span> <span class="code-keyword">extends</span> <span class="code-class">\Application\Assistance\Model</span>
+                        {
+                        <span class="code-comment code-space">/** @var int Primary key */</span>
+                        <span class="code-keyword code-space">public</span> <span class="code-var">$project_id</span>;
+                        <span class="code-comment code-space">/** @var string Project name */</span>
+                        <span class="code-keyword code-space">public</span> <span class="code-var">$project_name</span>;
+                        <span class="code-comment code-space">/** @var string Landing page URL */</span>
+                        <span class="code-keyword code-space">public</span> <span class="code-var">$project_landing</span>;
+                        <span class="code-comment code-space">/** @var string Project data (JSON) */</span>
+                        <span class="code-keyword code-space">public</span> <span class="code-var">$project_data</span>;
+                        <span class="code-comment code-space">/** @var int Timezone ID */</span>
+                        <span class="code-keyword code-space">public</span> <span class="code-var">$timezone_id</span>;
+                        <span class="code-comment code-space">/** JSON data field name for project data */</span>
+                        <span class="code-keyword code-space">public</span> <span class="code-var">$_dataField</span> = <span class="code-string">'ProjectData'</span>;
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><?= C::locale('О проекте') ?></span>
+            <h2><?= C::locale('Что такое SLOT-H?') ?></h2>
+            <p class="section-description">
+                <?= C::locale('SLOT-H (Single Logical Operating Tool for Hosting) - это не фреймворк. Это боевая экосистема, которая родилась из 25-летнего опыта разработки и 15+ лет продакшена.') ?>
+            </p>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon">🎯</div>
+                <h3><?= C::locale('Одна цель') ?></h3>
+                <p><?= C::locale('Позволить одному коду работать на множестве проектов одновременно. Вы пишете код один раз - SLOT-H разворачивает его на десятках сайтов.') ?></p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">⚡</div>
+                <h3><?= C::locale('Единая точка входа') ?></h3>
+                <p><?= C::locale('Единая база данных, единая логика, единая точка входа. Без микросервисов. Без контейнеризации. Без головной боли.') ?></p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">🔧</div>
+                <h3><?= C::locale('Прагматичность') ?></h3>
+                <p><?= C::locale('Код, который работает. Разработчик, который не думает о ядре - только о коде в контроллере. 15+ лет движения в этом направлении.') ?></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="features">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><?= C::locale('Возможности') ?></span>
+            <h2><?= C::locale('Ключевые возможности') ?></h2>
+            <p class="section-description">
+                <?= C::locale('Всё, что нужно для прагматичной разработки мультипроектных систем') ?>
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧩</div>
+                <h3><?= C::locale('Модульность') ?></h3>
+                <p><?= C::locale('Контроллеры, модели, представления. Preloader, Crud, наследование. Чёткая структура без лишней магии.') ?></p>
+                <div class="feature-tags">
+                    <span class="tag">Controllers</span>
+                    <span class="tag">Models</span>
+                    <span class="tag">Views</span>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3><?= C::locale('Мультипроектность') ?></h3>
+                <p><?= C::locale('Один код - десятки проектов. project_id - ваш главный инструмент. Автоматическая изоляция данных на уровне запросов.') ?></p>
+                <div class="feature-tags">
+                    <span class="tag">project_id</span>
+                    <span class="tag">Multi-tenant</span>
+                    <span class="tag">Isolation</span>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗣️</div>
+                <h3><?= C::locale('Локализация') ?></h3>
+                <p><?= C::locale('Перевод любого сайта "из коробки". Ядро, знающее какой язык выдать пользователю. Готово для многоязычных проектов.') ?></p>
+                <div class="feature-tags">
+                    <span class="tag">i18n</span>
+                    <span class="tag">t_* tables</span>
+                    <span class="tag">language_id</span>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3><?= C::locale('ORM без магии') ?></h3>
+                <p><?= C::locale('Mysqli (& Maria), SQLite, PDO, Postgres, MsSQL, MongoDB. Сложные JOIN, умные WHERE. Ни единого прямого запроса в коде. Автоматическая оптимизация запросов.') ?></p>
+                <div class="feature-tags">
+                    <span class="tag">MsSQL</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">...</span>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3><?= C::locale('Безопасность') ?></h3>
+                <p><?= C::locale('Динамическая подпись форм (меняется максимум раз 30 секунд). Защита от CSRF и повторных отправок.') ?></p>
+                <div class="feature-tags">
+                    <span class="tag">CSRF</span>
+                    <span class="tag">Dynamic Sign</span>
+                    <span class="tag">Secure</span>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3><?= C::locale('Готов к работе') ?></h3>
+                <p><?= C::locale('Apache/Nginx, PHP 7.x-8.x, MySQL 8. Одна точка входа. Минимальные требования к окружению и серверу.') ?></p>
+                <div class="feature-tags">
+                    <span class="tag">PHP 7-8</span>
+                    <span class="tag">Apache</span>
+                    <span class="tag">Nginx</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="architecture">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><?= C::locale('Архитектура') ?></span>
+            <h2><?= C::locale('Как это работает') ?></h2>
+            <p class="section-description">
+                <?= C::locale('Простая и понятная архитектура без лишних слоёв') ?>
+            </p>
+        </div>
+        <div class="architecture-diagram">
+            <div class="arch-row">
+                <div class="arch-node primary">index.php<br><span class="arch-sub"><?= C::locale('единая точка входа') ?></span></div>
+                <div class="arch-arrow">↓</div>
+            </div>
+            <div class="arch-row">
+                <div class="arch-node secondary">Router / Request<br><span class="arch-sub"><?= C::locale('маршрутизация') ?></span></div>
+                <div class="arch-arrow">↓</div>
+            </div>
+            <div class="arch-row arch-modules">
+                <div class="arch-node module">Modules/Free<br><span class="arch-sub"><?= C::locale('публичная часть') ?></span></div>
+                <div class="arch-node module">Modules/Base<br><span class="arch-sub"><?= C::locale('ядро системы') ?></span></div>
+                <div class="arch-node module">Modules/Main<br><span class="arch-sub"><?= C::locale('админка') ?></span></div>
+                <div class="arch-node module">Modules/Geo<br><span class="arch-sub"><?= C::locale('гео-базы') ?></span></div>
+            </div>
+            <div class="arch-row">
+                <div class="arch-arrow">↓</div>
+            </div>
+            <div class="arch-row">
+                <div class="arch-node tertiary">DbTables / Models<br><span class="arch-sub"><?= C::locale('ORM + хранилище') ?></span></div>
+                <div class="arch-arrow">↓</div>
+            </div>
+            <div class="arch-row">
+                <div class="arch-node database">MsSQL / MySQL / Postgres / MongoDB / ...<br><span class="arch-sub"><?= C::locale('базы данных') ?></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="audience">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><?= C::locale('Аудитория') ?></span>
+            <h2><?= C::locale('Для кого SLOT-H?') ?></h2>
+            <p class="section-description">
+                <?= C::locale('Каждый найдёт в нём что-то полезное') ?>
+            </p>
+        </div>
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon">🏗️</div>
+                <h3><?= C::locale('Архитекторы') ?></h3>
+                <p><?= C::locale('Увидите, как можно строить мультипроектные системы без микросервисов. Просто и эффективно.') ?></p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">💻</div>
+                <h3><?= C::locale('Разработчики с опытом') ?></h3>
+                <p><?= C::locale('Найдёте прагматичные решения, которые работают годами. Без хайпа, с реальным кодом.') ?></p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">📊</div>
+                <h3><?= C::locale('Владельцы проектов') ?></h3>
+                <p><?= C::locale('Поймёте, как сократить затраты на поддержку множества сайтов. Экономия ресурсов и времени.') ?></p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">🎓</div>
+                <h3><?= C::locale('Студенты и начинающие') ?></h3>
+                <p><?= C::locale('Увидите реальный код, а не учебные примеры. Настоящий продакшен с 15-летней историей.') ?></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="comparison">
+    <div class="container">
+        <div class="comparison-content">
+            <div class="comparison-header">
+                <span class="section-tag"><?= C::locale('Сравнение') ?></span>
+                <h2><?= C::locale('Почему SLOT-H, а не Laravel / Symfony / тому подобное?') ?></h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <span class="comparison-icon">✔️</span>
+                    <div>
+                        <?= C::locale('<strong>Laravel</strong> - это фреймворк. <strong>SLOT-H</strong> - это экосистема.') ?>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <span class="comparison-icon">✔️</span>
+                    <div>
+                        <?= C::locale('<strong>Laravel</strong> учит "правильно". <strong>SLOT-H</strong> учит "прагматично".') ?>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <span class="comparison-icon">✔️</span>
+                    <div>
+                        <?= C::locale('<strong>Laravel</strong> требует подстройки. <strong>SLOT-H</strong> работает как есть.') ?>
+                    </div>
+                </div>
+            </div>
+            <div class="comparison-quote">
+                <p>
+                    <?= C::locale('Я не говорю, что SLOT-H лучше. Я говорю: он <strong>ДРУГОЙ</strong>. Он создан для моих задач. Возможно, и для ваших тоже.') ?>
+                </p>
+                <span class="quote-author">- <?= C::locale('автор проекта, 25 лет опыта') ?></span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="structure">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><?= C::locale('Структура') ?></span>
+            <h2><?= C::locale('Что внутри') ?></h2>
+            <p class="section-description">
+                <?= C::locale('Организация кода - чистая и понятная') ?>
+            </p>
+        </div>
+        <div class="structure-tree">
+            <div class="tree-item folder">slot-h/</div>
+            <div class="tree-item folder indent-1">├── Application/ <span class="tree-comment"># <?= C::locale('Ядро системы') ?></span></div>
+            <div class="tree-item folder indent-2">│   ├── Assistance/ <span class="tree-comment"># ORM, Request, View, Controllers</span></div>
+            <div class="tree-item folder indent-2">│   ├── Helpers/ <span class="tree-comment"># <?= C::locale('Базовые хелперы') ?></span></div>
+            <div class="tree-item folder indent-2">│   ├── Layout/ <span class="tree-comment"># <?= C::locale('Шаблоны проектов') ?></span></div>
+            <div class="tree-item folder indent-2">│   ├── Public/ <span class="tree-comment"># <?= C::locale('Базовая статика (css, js, fonts)') ?></span></div>
+            <div class="tree-item folder indent-2">│   └── Tools/ <span class="tree-comment"># <?= C::locale('Утилиты (автолоадер, CLI)') ?></span></div>
+            <div class="tree-item folder indent-1">├── Config/ <span class="tree-comment"># <?= C::locale('Конфигурация') ?></span></div>
+            <div class="tree-item folder indent-2">│   ├── config.php <span class="tree-comment"># <?= C::locale('Глобальные настройки') ?></span></div>
+            <div class="tree-item folder indent-2">│   ├── Domens/ <span class="tree-comment"># <?= C::locale('Конфиги проектов (*.ini)') ?></span></div>
+            <div class="tree-item folder indent-2">│   └── Logs/ <span class="tree-comment"># <?= C::locale('Логи по проектам') ?></span></div>
+            <div class="tree-item folder indent-1">├── Modules/ <span class="tree-comment"># <?= C::locale('Модули (Base, Main, Free, Geo)') ?></span></div>
+            <div class="tree-item folder indent-1">├── Storage/ <span class="tree-comment"># <?= C::locale('Файловое хранилище') ?></span></div>
+            <div class="tree-item file indent-1">├── index.php <span class="tree-comment"># <?= C::locale('Точка входа') ?></span></div>
+            <div class="tree-item file indent-1">└── .htaccess <span class="tree-comment"># <?= C::locale('URL-роутинг') ?></span></div>
+        </div>
+    </div>
+</section>
+<section class="license">
+    <div class="container">
+        <div class="license-content">
+            <div class="license-grid">
+                <div class="license-item">
+                    <span class="license-icon">📜</span>
+                    <div>
+                        <h4><?= C::locale('Лицензия') ?></h4>
+                        <p><?= C::locale('MIT - свободно, для любых целей') ?></p>
+                    </div>
+                </div>
+                <div class="license-item">
+                    <span class="license-icon">🚀</span>
+                    <div>
+                        <h4><?= C::locale('Статус') ?></h4>
+                        <p><?= C::locale('Боевой, работает в продакшене') ?></p>
+                    </div>
+                </div>
+                <div class="license-item">
+                    <span class="license-icon">📅</span>
+                    <div>
+                        <h4><?= C::locale('Возраст') ?></h4>
+                        <p><?= C::locale('15+ лет непрерывной эволюции') ?></p>
+                    </div>
+                </div>
+                <div class="license-item">
+                    <span class="license-icon">👨‍💻</span>
+                    <div>
+                        <h4><?= C::locale('Автор') ?></h4>
+                        <p><?= C::locale('25 лет опыта в одном репозитории') ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="license-notice">
+                <span class="notice-icon">⚠️</span>
+                <p>
+                    <?= C::locale('<strong>Важно:</strong> SLOT-H - это НЕ учебный проект. Это код, который кормит семью автора. Он не идеален. Он прагматичен.') ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <div class="cta-text">
+                <h2><?= C::locale('Готовы увидеть, как работает SLOT-H?') ?></h2>
+                <div class="cta-links">
+                    <a href="https://github.com/yourname/slot-h" class="btn btn-github btn-lg" target="_blank">
+                        <span class="btn-icon">⭐</span> GitHub
+                    </a>
+                    <a href="/docs" class="btn btn-outline btn-lg">📖 <?= C::locale('Документация') ?></a>
+                </div>
+                <div class="cta-actions">
+                    <div class="cta-action">
+                        <span class="action-icon">★</span>
+                        <span><?= C::locale('Если SLOT-H помог вам - поставьте звезду') ?></span>
+                    </div>
+                    <div class="cta-action">
+                        <span class="action-icon">★</span>
+                        <span><?= C::locale('Если нашли баг - создайте Issue') ?></span>
+                    </div>
+                    <div class="cta-action">
+                        <span class="action-icon">★</span>
+                        <span><?= C::locale('Если хотите улучшить - сделайте Pull Request') ?></span>
+                    </div>
+                </div>
+                <div class="cta-note">
+                    <p><?= C::locale('Конструктивная критика приветствуется. Тролли - игнорируются.') ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

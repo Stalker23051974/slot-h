@@ -1,0 +1,427 @@
+<?php
+use \Config\CC as C;
+
+/** @var \Application\Assistance\View\View $this */
+$this->addStyle();
+
+$pageTitle = C::locale('О проекте SLOT-H - история и философия');
+$pageDescription = C::locale('История создания SLOT-H, автор, философия прагматизма и почему фреймворки - это чёрный ящик.');
+?>
+<section class="about-hero">
+    <div class="container">
+        <div class="about-hero-content">
+            <span class="section-tag"><?= C::locale('История') ?></span>
+            <h1><?= C::locale('О проекте SLOT-H') ?></h1>
+            <p class="about-hero-subtitle">
+                <?= C::locale('Один код. Множество проектов. Ноль границ.') ?><br>
+                <?= C::locale('И 15 лет непрерывной эволюции.') ?>
+            </p>
+        </div>
+    </div>
+</section>
+<section class="history">
+    <div class="container">
+        <div class="history-content">
+            <div class="history-text">
+                <span class="section-tag"><?= C::locale('Как всё начиналось') ?></span>
+                <h2><?= C::locale('История создания') ?></h2>
+                <p><?= sprintf(C::locale('Всё началось в %s2011 году%s. Автор, разработчик с 10-летним стажем на тот момент, столкнулся с проблемой, которая мучает многих: %s10 проектов - 10 разных кодовых баз%s.'), '<strong>', '</strong>', '<strong>', '</strong>') ?></p>
+                <p><?= C::locale('Каждый проект требовал отдельного обслуживания, обновлений, исправлений багов. Одно и то же действие нужно было делать 10 раз. 10 раз править один и тот же баг. 10 раз объяснять клиентам, почему обновление займёт время.') ?></p>
+                <div class="history-problem">
+                    <span class="problem-icon">😤</span>
+                    <div>
+                        <strong><?= C::locale('Проблема:') ?></strong>
+                        <span><?= C::locale('Один баг → 10 проектов → 10 исправлений → бесконечность') ?></span>
+                    </div>
+                </div>
+                <p><?= C::locale('Решение пришло не сразу. Первая версия SLOT-H (тогда он вообще никак не назывался) была простым набором скриптов для унификации. Но с каждым новым проектом система эволюционировала, обрастала новыми возможностями и становилась всё более целостной.') ?></p>
+                <p><?= sprintf(C::locale('К %s2015 году%s стало ясно: это не просто набор скриптов, это целая экосистема. К %s2020 году%s - боевой продакшен на десятках проектов. К %s2026 году%s - %s15 лет непрерывной эволюции%s.'), '<strong>', '</strong>', '<strong>', '</strong>', '<strong>', '</strong>', '<strong>', '</strong>') ?></p>
+            </div>
+            <div class="history-quote">
+                <blockquote>"<?= C::locale('Я не создавал SLOT-H для портфолио. Я создавал его, чтобы выжить. Чтобы не сойти с ума от поддержки 20 проектов. И чтобы спать спокойно по ночам.') ?>"</blockquote>
+                <cite>- <?= C::locale('автор проекта, 25 лет в разработке') ?></cite>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="framework-critique">
+    <div class="container">
+        <div class="critique-content">
+            <div class="critique-header">
+                <span class="section-tag"><?= C::locale('Личная история') ?></span>
+                <h2><?= C::locale('Как Zend Framework 1 изменил всё') ?></h2>
+                <p class="critique-subtitle">
+                    <?= C::locale('И почему SLOT-H - это не фреймворк, а нечто совсем другое') ?>
+                </p>
+            </div>
+
+            <div class="critique-story">
+                <div class="story-block">
+                    <p>
+                        <?= sprintf(C::locale('В то время я работал с %sZend Framework 1%s. Это было время, когда PHP-фреймворки только набирали обороты, и ZF1 казался вершиной инженерной мысли. Я впитывал его архитектуру, его паттерны, его подходы.'), '<strong>', '</strong>', '<strong>', '</strong>') ?>
+                    </p>
+                    <p>
+                        <?= sprintf(C::locale('Zend Framework 1 научил меня %sструктуре%s. Он показал, как можно организовать код, как разделять ответственность, как строить большие системы. Но со временем пришло и другое понимание.'), '<strong>', '</strong>') ?>
+                    </p>
+                </div>
+
+                <div class="story-block highlight-block">
+                    <div class="highlight-icon">💭</div>
+                    <div class="highlight-text">
+                        <strong><?= C::locale('Мысль, которая изменила всё:') ?></strong>
+                        <span>
+                        "<?= sprintf(C::locale('Если Zend Framework 1 - это швейцарский нож, то мне нужна была %sпростая отвертка%s, которая всегда под рукой.'), '<strong>', '</strong>') ?>"
+                    </span>
+                    </div>
+                </div>
+
+                <div class="story-block">
+                    <p>
+                        <?= sprintf(C::locale('Идеология SLOT-H рождалась под влиянием ZF1, но шла %sсвоим путём%s. Я брал лучшее - чёткую структуру, разделение на слои, - но отбрасывал всё, что казалось %sизбыточным%s для моих задач.'), '<strong>', '</strong>', '<strong>', '</strong>') ?>
+                    </p>
+                    <p>
+                        <?= sprintf(C::locale('Постепенно система начала напоминать %sCodeIgniter%s в своей %sпрагматичности%s и простоте, но с %sсобственной архитектурой%s, которая выросла из реальных проектов, а не из теоретических построений.'), '<strong>', '</strong>', '<strong>', '</strong>', '<strong>', '</strong>') ?>
+                    </p>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <div class="comparison-row">
+                    <div class="comparison-label">Zend Framework 1</div>
+                    <div class="comparison-value"><?= C::locale('Вдохновение, структура, паттерны') ?></div>
+                    <div class="comparison-arrow">→</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-label">CodeIgniter</div>
+                    <div class="comparison-value"><?= C::locale('Прагматичность, простота, "работает из коробки"') ?></div>
+                    <div class="comparison-arrow">+</div>
+                </div>
+                <div class="comparison-row result">
+                    <div class="comparison-label">SLOT-H</div>
+                    <div class="comparison-value"><?= C::locale('Собственная экосистема с уникальной архитектурой') ?></div>
+                    <div class="comparison-arrow">=</div>
+                </div>
+            </div>
+
+            <div class="critique-conclusion">
+                <div class="conclusion-icon">🎯</div>
+                <div class="conclusion-text">
+                    <strong><?= C::locale('Суть:') ?></strong>
+                    <span>
+                    <?= sprintf(C::locale('SLOT-H не пытается быть лучше ZF или CodeIgniter, Laravel или Yii. Он %sдругой%s. Он впитал идеи этих инструментов, переосмыслил их и превратил в %sсобственную философию%s, которая работает уже %s15 лет%s.'), '<strong>', '</strong>', '<strong>', '</strong>', '<strong>', '</strong>') ?>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="timeline">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><?= C::locale('Эволюция') ?></span>
+            <h2><?= C::locale('Таймлайн развития') ?></h2>
+            <p class="section-description">
+                <?= C::locale('15 лет непрерывной эволюции - от скриптов до боевой экосистемы') ?>
+            </p>
+        </div>
+
+        <div class="timeline-grid">
+            <div class="timeline-item">
+                <div class="timeline-year">2011</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('Первая версия') ?></h4>
+                    <p><?= C::locale('Простой набор скриптов для унификации проектов. Ещё не SLOT-H, но идея уже родилась.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('Единая точка входа') ?></h4>
+                    <p><?= C::locale('Появляется index.php как единый маршрутизатор. Рождение архитектуры.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2013</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('Рождение модулей') ?></h4>
+                    <p><?= C::locale('Архитектура Modules/Base, /Main, /Free. Первое разделение на публичную часть, ядро и админку.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2014</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('Первый продакшен') ?></h4>
+                    <p><?= C::locale('SLOT-H (тогда без имени) идёт в бой. 5 проектов на одной кодовой базе.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('Осознание экосистемы') ?></h4>
+                    <p><?= C::locale('Становится ясно: это не просто набор скриптов. Это целая экосистема для мультипроектной разработки.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('Рефакторинг ORM') ?></h4>
+                    <p><?= C::locale('Полный отказ от запросов в коде. Прозрачные JOIN, понятные WHERE. Без скрытой логики. И всё это - в едином объекте запроса.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('Расширение БД') ?></h4>
+                    <p><?= C::locale('Добавлена поддержка PostgreSQL и MongoDB. ORM становится гибче.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>PHP 8.x</h4>
+                    <p><?= C::locale('Переход на PHP 8.x. Использование современных возможностей без потери совместимости.') ?></p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-dot current"></div>
+                <div class="timeline-content">
+                    <h4><?= C::locale('15 лет эволюции') ?></h4>
+                    <p><?= C::locale('Полный код - в личном репозитории автора. Публичная демо-версия - для знакомства с вырезанными реализациями под клиентов и с единственным даижком на MySQL.') ?></p>
+                    <span class="timeline-badge"><?= C::locale('Сейчас мы здесь') ?></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="author">
+    <div class="container">
+        <div class="author-content">
+            <div class="author-info">
+                <span class="section-tag"><?= C::locale('Автор') ?></span>
+                <h2><?= C::locale('Кто за этим стоит') ?></h2>
+                <div class="author-stats">
+                    <div class="author-stat">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label"><?= C::locale('лет в разработке') ?></span>
+                    </div>
+                    <div class="author-stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label"><?= C::locale('лет эволюции SLOT-H') ?></span>
+                    </div>
+                    <div class="author-stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label"><?= C::locale('проектов') ?></span>
+                    </div>
+                </div>
+                <div class="author-text">
+                    <p>
+                        <?= sprintf(C::locale('За проектом стоит %sодин человек%s. Начинал с Basic, Algol и C, потом перешёл на PHP (в то время 4 версии), когда это ещё не было мейнстримом.'), '<strong>', '</strong>') ?>
+                    </p>
+                    <p>
+                        <?= sprintf(C::locale('Создатель SLOT-H - %sпрагматик%s до мозга костей. Он не гонится за хайпом, не переписывает код каждые полгода под новый фреймворк. Он пишет код, который работает. Код, который кормит семью.'), '<strong>', '</strong>') ?>
+                    </p>
+                    <p>
+                        <?= sprintf(C::locale('За плечами - %sпроекты%s, от небольших сайтов до крупных корпоративных систем. И каждый проект - это урок, который был применён в SLOT-H.'), '<strong>', '</strong>') ?>
+                    </p>
+                </div>
+                <div class="author-philosophy">
+                    <span class="philosophy-icon">⚡</span>
+                    <div>
+                        <strong><?= C::locale('Философия автора:') ?></strong>
+                        <span>
+                        "<?= sprintf(C::locale('Я не пишу код для того, чтобы он был красивым. Я пишу код для того, чтобы он %sработал%s и чтобы его %sможно было поддерживать%s через 5 лет.'), '<strong>', '</strong>', '<strong>', '</strong>') ?>"
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="values">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><?= C::locale('Ценности') ?></span>
+            <h2><?= C::locale('На чём стоим') ?></h2>
+            <p class="section-description">
+                <?= C::locale('Принципы, которые определяют развитие SLOT-H') ?>
+            </p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3><?= C::locale('Прагматизм') ?></h3>
+                <p><?= C::locale('Работает - значит хорошо. Идеально - враг достаточно хорошего.') ?></p>
+                <div class="value-tag">> <?= C::locale('Идеализма') ?></div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">📖</div>
+                <h3><?= C::locale('Реальный код') ?></h3>
+                <p><?= C::locale('Никаких учебных примеров. Только код, который прошёл через продакшен.') ?></p>
+                <div class="value-tag">> <?= C::locale('Учебных примеров') ?></div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🧩</div>
+                <h3><?= C::locale('Простота') ?></h3>
+                <p><?= C::locale('Сложность - враг понимания. Простой код легче поддерживать.') ?></p>
+                <div class="value-tag">> <?= C::locale('Сложности') ?></div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h3><?= C::locale('Надёжность') ?></h3>
+                <p><?= C::locale('Баги недопустимы. Каждое изменение проверяется временем.') ?></p>
+                <div class="value-tag">> <?= C::locale('Скорости') ?></div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">📅</div>
+                <h3><?= C::locale('Долгосрочность') ?></h3>
+                <p><?= C::locale('Код пишется на годы вперёд. Никаких революций, только эволюция.') ?></p>
+                <div class="value-tag">> <?= C::locale('Сиюминутных трендов') ?></div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💬</div>
+                <h3><?= C::locale('Открытость') ?></h3>
+                <p><?= C::locale('Демо-код открыт. Диалог открыт. Конструктивная критика приветствуется.') ?></p>
+                <div class="value-tag">> <?= C::locale('Закрытости') ?></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="repo-info">
+    <div class="container">
+        <div class="repo-content">
+            <div class="repo-header">
+                <span class="section-tag"><?= C::locale('Честно о коде') ?></span>
+                <h2><?= C::locale('Публичная демо-версия') ?></h2>
+                <p class="repo-subtitle">
+                    <?= C::locale('Что вы найдёте в открытом репозитории, а что останется за кадром') ?>
+                </p>
+            </div>
+
+            <div class="repo-grid">
+                <div class="repo-card public">
+                    <div class="repo-card-header">
+                        <span class="repo-icon">📂</span>
+                        <h3><?= C::locale('Публичный репозиторий') ?></h3>
+                        <span class="repo-badge"><?= C::locale('Демо-версия') ?></span>
+                    </div>
+                    <ul class="repo-list">
+                        <li>✅ <?= C::locale('Базовая архитектура и структура') ?></li>
+                        <li>✅ <?= C::locale('Примеры контроллеров и моделей') ?></li>
+                        <li>✅ <?= C::locale('Демонстрация мультипроектности') ?></li>
+                        <li>✅ <?= C::locale('Документация и примеры использования') ?></li>
+                        <li>✅ <?= C::locale('Базовый ORM с поддержкой MySQL') ?></li>
+                        <li>✅ <?= C::locale('Публичная часть') ?></li>
+                    </ul>
+                    <div class="repo-note">
+                        <span class="note-icon">📖</span>
+                        <span><?= C::locale('Этого достаточно, чтобы понять философию и архитектуру SLOT-H') ?></span>
+                    </div>
+                </div>
+
+                <div class="repo-card private">
+                    <div class="repo-card-header">
+                        <span class="repo-icon">🔒</span>
+                        <h3><?= C::locale('Личный репозиторий автора') ?></h3>
+                        <span class="repo-badge private"><?= C::locale('Полная версия') ?></span>
+                    </div>
+                    <ul class="repo-list">
+                        <li>✅ <?= C::locale('Полный код с миграциями') ?></li>
+                        <li>✅ <?= C::locale('Движки работы с кэшем (Memcached, Redis)') ?></li>
+                        <li>✅ <?= C::locale('Полноценная работа с SQL и NoSQL') ?></li>
+                        <li>✅ <?= C::locale('Контроль пользователя по fingerprint устройства') ?></li>
+                        <li>✅ <?= C::locale('Расширенная система безопасности') ?></li>
+                        <li>✅ <?= C::locale('Интеграция с внешними API и сервисами') ?></li>
+                        <li>✅ <?= C::locale('Продвинутая маршрутизация и валидация') ?></li>
+                        <li>✅ <?= C::locale('CLI-инструменты для автоматизации') ?></li>
+                    </ul>
+                    <div class="repo-note highlight-note">
+                        <span class="note-icon">⚠️</span>
+                        <span>
+                        <?= sprintf(C::locale('%sВажно:%s Полный код остаётся в личном репозитории автора и не будет выложен в открытый доступ. Публичная демо-версия - это приглашение к диалогу, а не весь инструмент.'), '<strong>', '</strong>') ?>
+                    </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="repo-conclusion">
+                <div class="conclusion-icon">💡</div>
+                <div class="conclusion-text">
+                    <strong><?= C::locale('Почему так:') ?></strong>
+                    <span>
+                    <?= sprintf(C::locale('SLOT-H - это %sживой инструмент%s, который автор использует в работе каждый день. Полный код содержит решения, которые были выработаны за 15 лет и продолжают эволюционировать. Публичная демо-версия показывает %sархитектуру и философию%s, а полная версия - это %sбоевой инструмент%s.'), '<strong>', '</strong>', '<strong>', '</strong>', '<strong>', '</strong>') ?>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="community">
+    <div class="container">
+        <div class="community-content">
+            <div class="community-grid">
+                <div class="community-info">
+                    <span class="section-tag"><?= C::locale('Сообщество') ?></span>
+                    <h2><?= C::locale('Открытый диалог') ?></h2>
+                    <p>
+                        <?= sprintf(C::locale('SLOT-H - это не коммерческий продукт. Это %sоткрытый проект%s с открытой демо-версией и открытым диалогом.'), '<strong>', '</strong>') ?>
+                    </p>
+                    <p>
+                        <?= sprintf(C::locale('Автор открыт к %sдиалогу%s, конструктивной критике и улучшениям. Смотрите демо-версию, задавайте вопросы, предлагайте идеи.'), '<strong>', '</strong>') ?>
+                    </p>
+                    <p class="community-note">
+                        <?= sprintf(C::locale('Полный код остаётся в личном репозитории, но %sидеи и философия%s - открыты для всех.'), '<strong>', '</strong>') ?>
+                    </p>
+                    <div class="community-quote">
+                        <blockquote>
+                            "<?= C::locale('Я не идеален. Код не идеален. Но он работает. И мы можем сделать его лучше вместе. Начните с демо-версии - этого достаточно, чтобы понять суть."') ?>
+                        </blockquote>
+                        <cite>- <?= C::locale('автор проекта') ?></cite>
+                    </div>
+                </div>
+                <div class="community-future">
+                    <div class="future-card">
+                        <h3>🚀 <?= C::locale('Будущее') ?></h3>
+                        <p><?= C::locale('SLOT-H продолжает развиваться. Без революций - только эволюция. Каждое изменение проходит проверку временем и реальными проектами.') ?></p>
+                    </div>
+                    <div class="future-card">
+                        <h4><?= C::locale('Планы на развитие:') ?></h4>
+                        <ul>
+                            <li>📖 <?= C::locale('Расширение документации к демо-версии') ?></li>
+                            <li>💡 <?= C::locale('Больше примеров использования') ?></li>
+                        </ul>
+                    </div>
+                    <div class="future-card cta-mini">
+                        <h4><?= C::locale('Присоединяйтесь') ?></h4>
+                        <p><?= C::locale('Демо-код открыт. Диалог открыт. Добро пожаловать.') ?></p>
+                        <div class="future-links">
+                            <a href="https://github.com/yourname/slot-h" class="btn btn-github" target="_blank">
+                                ⭐ GitHub (<?= C::locale('демо') ?>)
+                            </a>
+                            <a href="https://t.me/slot_h" class="btn btn-outline" target="_blank">
+                                💬 Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
